@@ -1,0 +1,22 @@
+Issues :
+1. Issue sur les sélecteurs de date :
+https://github.com/OpenClassrooms-Student-Center/P12_Front-end/issues/1
+
+2. Issue de fenêtre modale :
+https://github.com/OpenClassrooms-Student-Center/P12_Front-end/issues/3
+
+3. issue sur menus déroulants :
+https://github.com/OpenClassrooms-Student-Center/P12_Front-end/issues/4
+
+4. issue sur les tableaux :
+https://github.com/OpenClassrooms-Student-Center/P12_Front-end/issues/2
+
+
+
+Liste des plugins à convertir :
+1. Sélection de date : https://github.com/xdan/datetimepicker
+2. Fenêtre modale - jQuery.modal.js : https://github.com/kylefox/jquery-modal
+3. Menus déroulants : https://github.com/jquery/jquery-ui/blob/master/ui/widgets/selectmenu.js
+4. Plugin pour les tables de donnees : https://github.com/DataTables/DataTables
+
+Tuto création package npm : https://github.com/Yan-Coquoz/tutos-perso/blob/main/NPM_creator.md
