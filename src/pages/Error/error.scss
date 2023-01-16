@@ -1,0 +1,21 @@
+@use './../../styles/utils/vars';
+
+.error {
+  text-align: center;
+  margin: auto;
+  
+  &Title {
+    font-size: vars.$fsize-404-mobile;
+    font-weight: vars.$fweight-bold;
+  }
+
+  &Text {
+    font-size: vars.$fsize-18px;
+    margin-block-end: vars.$space-base * 10; //space-base = 8px;
+  }
+
+  &HomeLink {
+    text-decoration: underline;
+    font-size: vars.$fsize-14px;
+  }
+}
