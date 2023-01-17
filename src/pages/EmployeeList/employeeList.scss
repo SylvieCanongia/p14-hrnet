@@ -1,1 +1,42 @@
 @use './../../styles/utils/vars';
+
+.employeeList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    table {
+      border-collapse: collapse;
+      width: 80%;
+
+      thead tr {
+        color: whitesmoke;
+        background-color: vars.$col-primary;
+        font-size: 1rem;
+      }
+
+      tbody tr {
+        border: 1px solid vars.$col-tableInsideBorder;
+        background-color: vars.$col-tableBgColorDarker;
+      }
+
+      tbody tr:nth-child(odd) {
+        background-color: vars.$col-tableBgColorLighter;
+      }
+
+      th, td {
+      padding: 0.75rem 1rem;
+      font-weight: normal;
+      text-align: left;
+      border: 1px solid #ffffff;
+      }
+
+    }
+
+    @media screen and (max-width: 768px) {
+      table {
+        border: none;
+      }
+    }
+}
