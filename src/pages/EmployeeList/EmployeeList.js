@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
-import employeesList from './../../assets/employeesList.json';
 import './employeeList.scss';
 
 const EmployeeList = () => {
+  const employeesList = JSON.parse(localStorage.getItem('employees')) || [];
+
   return (
     <div className="employeeList container">
       <h1>Current Employees</h1>

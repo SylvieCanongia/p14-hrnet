@@ -5,4 +5,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    label {
+        display: block;
+        margin-block-start: vars.$space-XS;
+        margin-block-end: vars.$space-base;
+    }
+    
+    .address {
+        margin-block-start: vars.$space-XS;
+    }
 }
