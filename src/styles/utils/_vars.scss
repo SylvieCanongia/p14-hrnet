@@ -8,13 +8,14 @@ $font-text: 'Montserrat', sans-serif;
 // ====== COLORS ======
 
 $col-primary: hsl(70,76%,39%);
-$col-primary-lighten: hsl(70,76%,49%);
 $col-secondary: hsl(72,79%,29%);
+$col-secondary-darker: hsl(72,79%,22%);
 $col-tertiary: hsl(72,87%,23%);
+$col-border-light: rgb(206, 211, 183);
 $col-black: hsl(0deg, 0%, 0%);
 $col-white: hsl(0, 0%, 100%);
-$col-tableInsideBorder: lightGray;
-$col-tableBgColorDarker: hsl(0, 0%, 93%);
+$col-tableInsideBorder: black;
+$col-tableBgColorDarker: hsl(0, 0%, 90%);
 $col-tableBgColorLighter: hsl(0, 0%, 99%);
 
 // ====== FONT-SIZE ======
@@ -50,6 +51,7 @@ $space-S: 24px;
 $space-M: 32px;
 $space-L: 40px;
 $space-XL: 48px;
+$space-row-47px: 47px;
 
 // ====== SIZES (HEIGHT, WIDTH) ======
 
