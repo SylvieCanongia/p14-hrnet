@@ -9,7 +9,7 @@
 
     table {
       border-collapse: collapse;
-      width: 80%;
+      width: 90%;
       border: 1px solid vars.$col-border-light;
       // Size in function of the width of the headings
       table-layout: fixed;
@@ -36,9 +36,21 @@
       }
     }
 
-    @media screen and (max-width: 880px) {
+    @media screen and (max-width: 1350px) {
+      table {
+        width: 95%;
+      }
+
+      table td {
+        font-size: 0.9rem;
+      }
+    }
+
+    @media screen and (max-width: 1150px) {
+      
       table {
         border: none;
+        width: 60%;
       }
 
       table thead {
@@ -60,6 +72,7 @@
         text-align: right;
         display: block;
         min-height: vars.$space-row-47px;
+        font-size: 1rem;
       }
 
       table td:before {
@@ -71,10 +84,23 @@
         float: left;
         opacity: 0.7;
         color: vars.$col-secondary-darker;
+        font-size: 1rem;
       }
 
       table td:not(:last-child) {
         border-bottom: 1px solid vars.$col-border-light;
+      }
+    }
+
+    @media screen and (max-width: 850px) {
+      table {
+        width: 75%;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      table {
+        width: 95%;
       }
     }
 }
