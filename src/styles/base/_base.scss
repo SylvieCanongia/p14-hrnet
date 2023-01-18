@@ -1,0 +1,7 @@
+@use './../utils/vars';
+
+body {
+  font-family: vars.$font-family-2;
+  font-size: vars.$fsize-16px;
+  font-weight: vars.$fweight-regular;
+}

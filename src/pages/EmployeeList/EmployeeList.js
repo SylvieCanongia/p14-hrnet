@@ -5,7 +5,7 @@ const EmployeeList = () => {
   const employeesList = JSON.parse(localStorage.getItem('employees')) || [];
 
   return (
-    <div className="employeeList container">
+    <div className="employeeList">
       <h1>Current Employees</h1>
       <table>
         <thead>

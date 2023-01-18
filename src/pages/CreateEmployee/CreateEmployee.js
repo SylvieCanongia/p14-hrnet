@@ -58,8 +58,8 @@ const CreateEmployee = () => {
   }
 
   return (
-    <div className='createEmployee container'>
-      <Link to="/">
+    <div className='createEmployee'>
+      <Link to="/" className='linkToViewEmployee'>
         View Current Employees
       </Link>
             <h2>Create Employee</h2>
@@ -164,9 +164,8 @@ const CreateEmployee = () => {
                     <option value='legal'>Legal</option>
                 </select>
                 <button type="submit">
-              Save employee
-            </button>
-            {/* <button onclick="saveEmployee()">Save</button> */}
+                  Save employee
+                </button>
             </form>
             
         <div id="confirmation" className="modal">Employee Created!</div>

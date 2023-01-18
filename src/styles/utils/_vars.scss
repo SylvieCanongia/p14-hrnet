@@ -3,7 +3,8 @@
 
 // ====== FONT FAMILY ======
 
-$font-text: 'Montserrat', sans-serif;
+$font-family-1: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-2: 'Montserrat', sans-serif;
 
 // ====== COLORS ======
 
@@ -12,6 +13,7 @@ $col-secondary: hsl(72,79%,29%);
 $col-secondary-darker: hsl(72,79%,22%);
 $col-tertiary: hsl(72,87%,23%);
 $col-border-light: rgb(206, 211, 183);
+$col-background: rgb(232, 235, 219);
 $col-black: hsl(0deg, 0%, 0%);
 $col-white: hsl(0, 0%, 100%);
 $col-tableInsideBorder: black;
@@ -57,3 +59,5 @@ $space-row-47px: 47px;
 // ====== SIZES (HEIGHT, WIDTH) ======
 
 // ====== RADIUS ======
+
+$radius-S: 5px;

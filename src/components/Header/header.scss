@@ -1,7 +1,7 @@
 @use './../../styles/utils/vars';
 
 .header {
-  margin-block-end: vars.$space-M;
+  padding-block: vars.$space-M;
   
   .header__container {
     display: flex;
