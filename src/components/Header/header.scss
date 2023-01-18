@@ -1,0 +1,37 @@
+@use './../../styles/utils/vars';
+
+.header {
+  margin-block-end: vars.$space-M;
+  
+  .header__container {
+    display: flex;
+    justify-content: left;
+
+    .logo {
+      width: 150px;
+    }
+
+    .header__title {
+      display: grid;
+      place-items: end;
+      padding-block-end: 3px;
+      font-size: vars.$fsize-40px;
+      color: vars.$col-primary;
+    }
+  }
+
+  .header__container--centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logo {
+      width: 150px;
+    }
+
+    .header__title {
+      font-size: vars.$fsize-40px;
+      color: vars.$col-primary;
+    }
+  }
+}
