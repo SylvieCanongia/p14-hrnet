@@ -76,7 +76,7 @@
       }
 
       table td:before {
-        content: attr(data-label);
+        content: attr(aria-label);
         font-size: 0.75rem;
         font-weight: vars.$fweight-bold;
         letter-spacing: 0.075rem;

@@ -24,15 +24,15 @@ const EmployeeList = () => {
         <tbody>
         { employeesList.map((employee) => (
           <tr key={employee.id}>
-            <td data-label="First Name">{employee.firstName}</td>
-            <td data-label="Last Name">{employee.lastName}</td>
-            <td data-label="Start Date">{employee.startDate}</td>
-            <td data-label="Department">{employee.department}</td>
-            <td data-label="Date of Birth">{employee.dateOfBirth}</td>
-            <td data-label="Street">{employee.street}</td>
-            <td data-label="City">{employee.city}</td>
-            <td data-label="State">{employee.state}</td>
-            <td data-label="Zip Code">{employee.zipCode}</td>
+            <td aria-label="First Name">{employee.firstName}</td>
+            <td aria-label="Last Name">{employee.lastName}</td>
+            <td aria-label="Start Date">{employee.startDate}</td>
+            <td aria-label="Department">{employee.department}</td>
+            <td aria-label="Date of Birth">{employee.dateOfBirth}</td>
+            <td aria-label="Street">{employee.street}</td>
+            <td aria-label="City">{employee.city}</td>
+            <td aria-label="State">{employee.state}</td>
+            <td aria-label="Zip Code">{employee.zipCode}</td>
           </tr>
         ))
         }
