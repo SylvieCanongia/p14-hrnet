@@ -14,7 +14,7 @@ const Header = () => {
             <div className="header__container__logo">
               <NavLink exact="true" to="/">
                 <div className="logo">
-                  <img src={LogoHeader} alt="Logo de Wealth Health" />
+                  <img className="logoImg" src={LogoHeader} alt="Logo de Wealth Health" />
                 </div>
               </NavLink>
             </div>
