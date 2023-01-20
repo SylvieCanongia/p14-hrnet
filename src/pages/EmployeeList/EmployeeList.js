@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './employeeList.scss';
+import { format } from 'date-fns';
 
 const EmployeeList = () => {
   const employeesList = JSON.parse(localStorage.getItem('employees')) || [];
@@ -26,9 +27,9 @@ const EmployeeList = () => {
           <tr key={employee.id}>
             <td aria-label="First Name">{employee.firstName}</td>
             <td aria-label="Last Name">{employee.lastName}</td>
-            <td aria-label="Start Date">{employee.startDate}</td>
+            <td aria-label="Start Date">{format(new Date(employee.startDate), "MM/dd/yyyy")}</td>
             <td aria-label="Department">{employee.department}</td>
-            <td aria-label="Date of Birth">{employee.dateOfBirth}</td>
+            <td aria-label="Date of Birth">{format(new Date(employee.dateOfBirth), "MM/dd/yyyy")}</td>
             <td aria-label="Street">{employee.street}</td>
             <td aria-label="City">{employee.city}</td>
             <td aria-label="State">{employee.state}</td>
