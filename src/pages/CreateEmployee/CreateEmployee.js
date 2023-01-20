@@ -36,8 +36,8 @@ const CreateEmployee = () => {
 
   // 3. On form submission
   const handleAddFormSubmit = (event) => {
-    event.preventDefault();
 
+    event.preventDefault();
     const newEmployee = {
       id: nanoid(),
       firstName: formData.firstName,
@@ -57,9 +57,7 @@ const CreateEmployee = () => {
     const newEmployees = [...employees, newEmployee];
     setEmployees(newEmployees);
 
-    console.log(employees);
-
-    localStorage.setItem("employees", JSON.stringify(employees));
+    localStorage.setItem("employees", JSON.stringify(newEmployees));
   };
 
   return (
@@ -91,25 +89,9 @@ const CreateEmployee = () => {
 
         <label htmlFor="dateOfBirth">Date of Birth</label>
         <CustomDatePicker id="dateOfBirth" name="dateOfBirth" startDate={formData.dateOfBirth} setStartDate={(date) => setFormData({ ...formData, dateOfBirth: date })} />
-        {/* <input
-          id="dateOfBirth"
-          name="dateOfBirth"
-          type="text"
-          required
-          value={formData.dateOfBirth}
-          onChange={handleAddFormChange}
-        /> */}
 
         <label htmlFor="startDate">Start Date</label>
         <CustomDatePicker id="startDate" name="startDate" startDate={formData.startDate} setStartDate={(date) => setFormData({ ...formData, startDate: date })} />
-        {/* <input
-          id="startDate"
-          name="startDate"
-          type="text"
-          required
-          value={formData.startDate}
-          onChange={handleAddFormChange}
-        /> */}
 
         <fieldset className="address">
           <legend>Address</legend>
