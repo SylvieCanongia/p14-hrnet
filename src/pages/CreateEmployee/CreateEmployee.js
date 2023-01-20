@@ -5,6 +5,7 @@ import SelectDropdown from "../../components/SelectDropdown/SelectDropdown";
 import { states } from "../../data/statesList";
 import { departments } from "../../data/departmentsList";
 import "./createEmployee.scss";
+import CustomDatePicker from "../../components/DatePicker/CustomDatePicker";
 
 const CreateEmployee = () => {
   const [employees, setEmployees] = useState(
@@ -89,24 +90,26 @@ const CreateEmployee = () => {
         />
 
         <label htmlFor="dateOfBirth">Date of Birth</label>
-        <input
+        <CustomDatePicker id="dateOfBirth" name="dateOfBirth" startDate={formData.dateOfBirth} setStartDate={(date) => setFormData({ ...formData, dateOfBirth: date })} />
+        {/* <input
           id="dateOfBirth"
           name="dateOfBirth"
           type="text"
           required
           value={formData.dateOfBirth}
           onChange={handleAddFormChange}
-        />
+        /> */}
 
         <label htmlFor="startDate">Start Date</label>
-        <input
+        <CustomDatePicker id="startDate" name="startDate" startDate={formData.startDate} setStartDate={(date) => setFormData({ ...formData, startDate: date })} />
+        {/* <input
           id="startDate"
           name="startDate"
           type="text"
           required
           value={formData.startDate}
           onChange={handleAddFormChange}
-        />
+        /> */}
 
         <fieldset className="address">
           <legend>Address</legend>
