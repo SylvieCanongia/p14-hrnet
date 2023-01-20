@@ -147,7 +147,7 @@ const CreateEmployee = () => {
           onChangeCallback={handleAddFormChange}
           dataToMap={departments}
           optionLabel="name"
-          optionValue="name"
+          optionValue="value"
           optionKey="name"
         />
 

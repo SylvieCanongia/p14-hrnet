@@ -1,0 +1,14 @@
+@use './../../styles/utils/vars';
+
+.selectContainer label {
+  display: block;
+  margin-block-start: vars.$space-XS;
+  margin-block-end: vars.$space-base;
+}
+
+.selectContainer select {
+  width: 100%;
+  height: 30px;
+  border: 1px inset vars.$col-secondary;
+  border-radius: vars.$radius-S;
+}
