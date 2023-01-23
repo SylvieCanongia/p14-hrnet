@@ -1,88 +1,92 @@
 @use './../../styles/utils/vars';
 
-.table {
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid vars.$col-border-light;
-  // Set the size in function of the width of the headings
-  table-layout: fixed;
+.tableContainer {
+  .table__searchSection {
+    display: flex;
+    justify-content: space-between;
+    padding-block-end: vars.$space-S;
 
-  thead tr {
-    color: whitesmoke;
-    background-color: vars.$col-secondary;
-    font-size: 1rem;
-  }
-
-  tbody tr {
-    background-color: vars.$col-tableBgColorDarker;
-  }
-
-  tbody tr:nth-child(odd) {
-    background-color: vars.$col-tableBgColorLighter;
-  }
-
-  th, td {
-  padding: 0.75rem 1rem;
-  font-weight: normal;
-  text-align: left;
-  border-inline: 1px solid vars.$col-border-light;
-  }
-
-  @media screen and (max-width: 1350px) {
-    // width: 95%;
-  
-    td {
-      font-size: 0.9rem;
+    @media screen and (max-width: 620px) {
+      flex-direction: column;
+      align-items: center;
+      gap: vars.$space-XS;
     }
   }
 
-  @media screen and (max-width: 1150px) {
-    border: none;
-    // width: 60%;
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid vars.$col-border-light;
+    // Set the size in function of the width of the table headings
+    table-layout: fixed;
   
-    thead {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
+    thead tr {
+      color: whitesmoke;
+      background-color: vars.$col-secondary;
+      font-size: 1rem;
     }
   
     tbody tr {
-      margin-bottom: 2rem;
-      display: block;
-      border: 1px solid vars.$col-primary;
+      background-color: vars.$col-tableBgColorDarker;
     }
   
-    td {
-      font-size: 0.875rem;
-      text-align: right;
-      display: block;
-      min-height: vars.$space-row-47px;
-      font-size: 1rem;
+    tbody tr:nth-child(odd) {
+      background-color: vars.$col-tableBgColorLighter;
     }
   
-    td:before {
-      content: attr(aria-label);
-      font-size: 0.75rem;
-      font-weight: vars.$fweight-bold;
-      letter-spacing: 0.075rem;
-      text-transform: uppercase;
-      float: left;
-      opacity: 0.7;
-      color: vars.$col-secondary-darker;
-      font-size: 1rem;
+    th, td {
+    padding: 0.75rem 1rem;
+    font-weight: normal;
+    text-align: left;
+    border-inline: 1px solid vars.$col-border-light;
     }
   
-    td:not(:last-child) {
-      border-bottom: 1px solid vars.$col-border-light;
+    @media screen and (max-width: 1350px) {
+    
+      td {
+        font-size: 0.9rem;
+      }
+    }
+  
+    @media screen and (max-width: 1150px) {
+      border: none;
+    
+      thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+    
+      tbody tr {
+        margin-bottom: 2rem;
+        display: block;
+        border: 1px solid vars.$col-primary;
+      }
+    
+      td {
+        font-size: 0.875rem;
+        text-align: right;
+        display: block;
+        min-height: vars.$space-row-47px;
+        font-size: 1rem;
+      }
+    
+      td:before {
+        content: attr(aria-label);
+        font-size: 0.75rem;
+        font-weight: vars.$fweight-bold;
+        letter-spacing: 0.075rem;
+        text-transform: uppercase;
+        float: left;
+        opacity: 0.7;
+        color: vars.$col-secondary-darker;
+        font-size: 1rem;
+      }
+    
+      td:not(:last-child) {
+        border-bottom: 1px solid vars.$col-border-light;
+      }
     }
   }
-
-  // @media screen and (max-width: 850px) {
-  //     width: 75%;
-  // }
-  
-  // @media screen and (max-width: 600px) {
-  //     width: 95%;
-  // }
 }

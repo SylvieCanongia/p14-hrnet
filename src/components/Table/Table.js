@@ -1,11 +1,15 @@
+import { useState } from 'react';
 import { format } from 'date-fns';
+import ShowEntries from '../ShowEntries/ShowEntries';
+import SearchBar from '../SearchBar/SearchBar';
 import './table.scss';
 
-const Table = ( { employeesList, keywords }) => {
-  console.log(keywords);
-  console.log(employeesList);
+const Table = ( { employeesList }) => {
+  const [keywords, setKeywords] = useState("");
+  const [nbOfEntries, setNbOfEntries] = useState(10);
+
   
-  //create a new array of employees by filtering the original array
+  //create a new array of filtered employees by filtering the original array
   const filteredEmployeesList = employeesList.filter((employee) => {
     // if under 3 chars are entered in searchBar, return the entire list
     if (keywords.length < 3) {
@@ -16,8 +20,16 @@ const Table = ( { employeesList, keywords }) => {
     }
   })
 
+  // "nbOfEntries is the number of employees to display selected in ShowEntries component
+  const filteredEmployeesToDisplay = filteredEmployeesList.slice(0, nbOfEntries);
+
   return (
-    <table className='table'>
+    <div className="tableContainer">
+      <div className='table__searchSection'>
+        <ShowEntries nbOfEntries={nbOfEntries} setNbOfEntries={setNbOfEntries} />
+        <SearchBar keywords={ keywords } setKeywords= { setKeywords } />
+      </div>
+      <table className='table'>
         <thead>
           <tr>
             <th>First Name</th>
@@ -32,7 +44,7 @@ const Table = ( { employeesList, keywords }) => {
           </tr>
         </thead>
         <tbody>
-        { filteredEmployeesList.map((employee) => (
+        { filteredEmployeesToDisplay.map((employee) => (
           <tr key={employee.id}>
             <td aria-label="First Name">{employee.firstName}</td>
             <td aria-label="Last Name">{employee.lastName}</td>
@@ -48,6 +60,7 @@ const Table = ( { employeesList, keywords }) => {
         }
         </tbody>
       </table>
+    </div>
   );
 };
 

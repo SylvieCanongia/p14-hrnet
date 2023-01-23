@@ -6,6 +6,9 @@
 
   & input {
     margin-inline-start: vars.$space-base;
+    height: 30px;
+    border: 1px inset vars.$col-secondary;
+    border-radius: vars.$radius-S;
     // padding-inline-end: 25px;
   }
 
@@ -17,9 +20,8 @@
   //   right: 8px;
   // }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 620px) {
     align-self: center;
-    width: 100%;
     display: flex;
     align-items: center;
 

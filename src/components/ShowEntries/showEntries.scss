@@ -1,0 +1,15 @@
+@use './../../styles/utils/vars';
+
+.showEntries {
+  display: flex;
+  align-items: baseline;
+
+  @media screen and (max-width: 620px) {
+    // width: 100%;
+  }
+
+  .selectContainer {
+    margin-inline: vars.$space-base;
+    width: 50px;
+  }
+}
