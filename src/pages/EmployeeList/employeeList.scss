@@ -7,4 +7,22 @@
     justify-content: center;
     gap: vars.$space-M;
     padding-block-end: vars.$space-M;
+    width: 90%;
+    margin-inline: auto;
+
+    @media screen and (max-width: 1350px) {
+      width: 95%;
+    }
+
+    @media screen and (max-width: 1150px) {
+      width: 60%;
+    }
+
+    @media screen and (max-width: 850px) {
+      width: 75%;
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 95%;
+    }
 }

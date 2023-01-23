@@ -1,7 +1,21 @@
 import { format } from 'date-fns';
 import './table.scss';
 
-const Table = ( { employeesList }) => {
+const Table = ( { employeesList, keywords }) => {
+  console.log(keywords);
+  console.log(employeesList);
+  
+  //create a new array of employees by filtering the original array
+  const filteredEmployeesList = employeesList.filter((employee) => {
+    // if under 3 chars are entered in searchBar, return the entire list
+    if (keywords.length < 3) {
+      return employee;
+    } else {
+      // above 3 chars entered, filter from lastName, department or startDate
+      return (employee.lastName.toLowerCase().includes(keywords)) || (employee.department.toLowerCase().includes(keywords)) || (employee.startDate.toString().includes(keywords))
+    }
+  })
+
   return (
     <table className='table'>
         <thead>
@@ -18,7 +32,7 @@ const Table = ( { employeesList }) => {
           </tr>
         </thead>
         <tbody>
-        { employeesList.map((employee) => (
+        { filteredEmployeesList.map((employee) => (
           <tr key={employee.id}>
             <td aria-label="First Name">{employee.firstName}</td>
             <td aria-label="Last Name">{employee.lastName}</td>

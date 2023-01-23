@@ -2,7 +2,7 @@
 
 .table {
   border-collapse: collapse;
-  width: 90%;
+  width: 100%;
   border: 1px solid vars.$col-border-light;
   // Set the size in function of the width of the headings
   table-layout: fixed;
@@ -29,7 +29,7 @@
   }
 
   @media screen and (max-width: 1350px) {
-    width: 95%;
+    // width: 95%;
   
     td {
       font-size: 0.9rem;
@@ -38,7 +38,7 @@
 
   @media screen and (max-width: 1150px) {
     border: none;
-    width: 60%;
+    // width: 60%;
   
     thead {
       position: absolute;
@@ -78,11 +78,11 @@
     }
   }
 
-  @media screen and (max-width: 850px) {
-      width: 75%;
-  }
+  // @media screen and (max-width: 850px) {
+  //     width: 75%;
+  // }
   
-  @media screen and (max-width: 600px) {
-      width: 95%;
-  }
+  // @media screen and (max-width: 600px) {
+  //     width: 95%;
+  // }
 }

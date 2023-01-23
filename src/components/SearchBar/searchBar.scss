@@ -1,0 +1,30 @@
+@use './../../styles/utils/vars';
+
+.searchBar__container {
+  align-self: flex-end;
+  position: relative;
+
+  & input {
+    margin-inline-start: vars.$space-base;
+    // padding-inline-end: 25px;
+  }
+
+  // & img {
+  //   width: 15px;
+  //   height: 15px;
+  //   position: absolute;
+  //   top: 8px;
+  //   right: 8px;
+  // }
+
+  @media screen and (max-width: 600px) {
+    align-self: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    & input {
+      flex-grow: 2;
+    }
+  }
+}
