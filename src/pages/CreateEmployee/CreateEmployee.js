@@ -46,7 +46,7 @@ const CreateEmployee = () => {
       department: formData.department,
       dateOfBirth: formData.dateOfBirth,
       street: formData.street,
-      city: formData.city,
+      city: formData.city.toUpperCase(),
       state: formData.state,
       zipCode: formData.zipCode,
     };
