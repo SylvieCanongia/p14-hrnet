@@ -41,7 +41,7 @@ const CreateEmployee = () => {
     const newEmployee = {
       id: nanoid(),
       firstName: formData.firstName,
-      lastName: formData.lastName,
+      lastName: formData.lastName.toUpperCase(),
       startDate: formData.startDate,
       department: formData.department,
       dateOfBirth: formData.dateOfBirth,

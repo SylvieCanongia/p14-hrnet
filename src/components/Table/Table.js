@@ -24,7 +24,7 @@ const Table = ( { employeesList }) => {
     }
   })
 
-  // === SORTING OF THE ARRAY BY startdate, in order antichronological ===
+  // === SORTING OF THE ARRAY BY startdate, in antichronological order ===
   // Turn your strings into dates, and then subtract them
   // to get a value that is either negative, positive, or zero.
   filteredEmployeesList.sort((a,b) => new Date(b.startDate) - new Date(a.startDate));
