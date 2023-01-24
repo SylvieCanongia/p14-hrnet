@@ -10,7 +10,9 @@ const Table = ( { employeesList }) => {
   const [nbOfEntries, setNbOfEntries] = useState(Number(10));
   const [currentPage, setCurrentPage] = useState(1);
 
-  
+  // ============================================================
+  // ========= Search function, filetring of the data ===========
+
   //create a new array of filtered employees by filtering the original array
   const filteredEmployeesList = employeesList.filter((employee) => {
     // if under 3 chars are entered in searchBar, return the entire list
@@ -22,11 +24,16 @@ const Table = ( { employeesList }) => {
     }
   })
 
+  // === SORTING OF THE ARRAY BY startdate, in order antichronological ===
+  // Turn your strings into dates, and then subtract them
+  // to get a value that is either negative, positive, or zero.
+  filteredEmployeesList.sort((a,b) => new Date(b.startDate) - new Date(a.startDate));
+
   // The search number of results
   const nbOfSearchResults = filteredEmployeesList.length;
 
-  // =============================================
-  // ================ PAGINATION =================
+  // ===================================================
+  // =================== PAGINATION ====================
 
   // Calculates the number of pages in function of the total number of results (nbOfSearchResults)
   // and the number of results to display per page (nbOfEntries)
