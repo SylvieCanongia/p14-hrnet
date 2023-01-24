@@ -2,13 +2,13 @@
 
 .tableContainer {
   background-color: vars.$col-background-primary;
-  border-start-start-radius: vars.$radius-S;
+  border-radius: vars.$radius-S;
   border-start-end-radius: vars.$radius-S;
 
   .table__searchSection {
     display: flex;
     justify-content: space-between;
-    padding-block-end: vars.$space-S;
+    padding-block-end: vars.$space-XS;
     padding-inline: vars.$space-XS; // 1rem
 
     @media screen and (max-width: 620px) {
@@ -29,8 +29,16 @@
       color: whitesmoke;
       background-color: vars.$col-secondary;
       font-size: 1rem;
-    }
+
+      .startDate, .dateOfBirth {
+        width: 130px;
+      }
   
+      .state, .zipCode {
+        width: 100px;
+      }
+    }
+
     tbody tr {
       background-color: vars.$col-tableBgColorDarker;
     }
@@ -96,6 +104,19 @@
       td:not(:last-child) {
         border-bottom: 1px solid vars.$col-border-light;
       }
+    }
+  }
+
+  .table__paginationSection {
+    display: flex;
+    justify-content: space-between;
+    padding-block: vars.$space-XS;
+    padding-inline: vars.$space-XS; // 1rem
+
+    @media screen and (max-width: 620px) {
+      flex-direction: column;
+      align-items: center;
+      gap: vars.$space-XS;
     }
   }
 }

@@ -1,0 +1,18 @@
+@use './../../styles/utils/vars';
+
+.pagination {
+  & button {
+    background-color: opacify(transparent, 0.2);
+    border: 1px inset vars.$col-secondary;
+    border-radius: vars.$radius-S;
+    transition: 0.3s ease-in-out;
+  }
+
+  & button:hover {
+    background-color: opacify(transparent, 0.4);
+  }
+
+  .pagination__currentPage {
+    margin-inline: vars.$space-base;
+  }
+}

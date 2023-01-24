@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { format } from 'date-fns';
 import ShowEntries from '../ShowEntries/ShowEntries';
 import SearchBar from '../SearchBar/SearchBar';
+import Pagination from '../Pagination/Pagination';
 import './table.scss';
 
 const Table = ( { employeesList }) => {
   const [keywords, setKeywords] = useState("");
-  const [nbOfEntries, setNbOfEntries] = useState(10);
+  const [nbOfEntries, setNbOfEntries] = useState(Number(10));
+  const [currentPage, setCurrentPage] = useState(1);
 
   
   //create a new array of filtered employees by filtering the original array
@@ -20,8 +22,29 @@ const Table = ( { employeesList }) => {
     }
   })
 
-  // "nbOfEntries is the number of employees to display selected in ShowEntries component
-  const filteredEmployeesToDisplay = filteredEmployeesList.slice(0, nbOfEntries);
+  // The search number of results
+  const nbOfSearchResults = filteredEmployeesList.length;
+
+  // =============================================
+  // ================ PAGINATION =================
+
+  // Calculates the number of pages in function of the total number of results (nbOfSearchResults)
+  // and the number of results to display per page (nbOfEntries)
+  let numberOfPages = 1;
+
+  // calculates the number of pages for pagination if the search result has at least 1 employee
+  // if(nbOfSearchResults >= 1) {
+    numberOfPages = Math.ceil(nbOfSearchResults/nbOfEntries);
+  // }
+
+  let startPointer;
+  if(currentPage === 1) startPointer = 0;
+  if (currentPage > 1) {
+    startPointer = (currentPage - 1) * Number(nbOfEntries);
+  }
+  const endPointer = startPointer + Number(nbOfEntries);
+
+  const filteredEmployeesToDisplay = filteredEmployeesList.slice(startPointer, endPointer);
 
   return (
     <div className="tableContainer">
@@ -34,13 +57,13 @@ const Table = ( { employeesList }) => {
           <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Start Date</th>
-            <th>Department</th>
-            <th>Date of Birth</th>
-            <th>Street</th>
+            <th className='startDate'>Start Date</th>
+            <th className='department'>Department</th>
+            <th className='dateOfBirth'>Date of Birth</th>
+            <th className='street'>Street</th>
             <th>City</th>
-            <th>State</th>
-            <th>Zip Code</th>
+            <th className='state'>State</th>
+            <th className='zipCode'>Zip Code</th>
           </tr>
         </thead>
         <tbody>
@@ -60,6 +83,10 @@ const Table = ( { employeesList }) => {
         }
         </tbody>
       </table>
+      <div className='table__paginationSection'>
+        <div>Showing 10 to 10 of 20 entries</div>
+        <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} numberOfPages={numberOfPages} nbOfEntriesToShow={nbOfEntries} />
+      </div>
     </div>
   );
 };
