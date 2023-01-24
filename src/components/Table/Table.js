@@ -46,15 +46,19 @@ const Table = ( { employeesList }) => {
 
   const filteredEmployeesToDisplay = filteredEmployeesList.slice(startPointer, endPointer);
 
-  // Case when changing the number of entries to show per page from a greater 
-  // page number conduces to have empty pages.
+  // reajust pagination with empty pages when changing number of entries to show from a small number of entries
+  // to a large number with less pages
   if( startPointer > nbOfSearchResults) {
     setCurrentPage(currentPage-1);
   }
 
-  // Indicates the number of entries showed
+  // Indicates the number of entries showed for the last page
   let lastIndexToShow;
- if(currentPage === numberOfPages) lastIndexToShow = nbOfSearchResults;
+  if(currentPage === numberOfPages) lastIndexToShow = nbOfSearchResults;
+
+  let nbOfEntriesOnTheLastPage;
+  if(currentPage === numberOfPages) nbOfEntriesOnTheLastPage = nbOfSearchResults - ((numberOfPages - 1) * nbOfEntries);
+
   return (
     <div className="tableContainer">
       <div className='table__searchSection'>
@@ -93,14 +97,14 @@ const Table = ( { employeesList }) => {
         </tbody>
       </table>
       <div className='table__paginationSection'>
+      
         { currentPage < numberOfPages &&
           <div>Showing {nbOfEntries} to {endPointer} of {nbOfSearchResults} entries</div>
         }
         { currentPage === numberOfPages &&
-          <div>Showing {nbOfEntries} to {lastIndexToShow} of {nbOfSearchResults} entries</div>
+          <div>Showing {nbOfEntriesOnTheLastPage} to {lastIndexToShow} of {nbOfSearchResults} entries</div>
         }
 
-        
         <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} numberOfPages={numberOfPages} nbOfEntriesToShow={nbOfEntries} />
       </div>
     </div>
