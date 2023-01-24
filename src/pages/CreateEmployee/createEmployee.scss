@@ -6,13 +6,11 @@
     align-items: center;
     justify-content: center;
     padding-block-end: 32px;
-
-    .linkToViewEmployee {
-      margin-block-end: vars.$space-XS;
-    }
+    gap: 24px;
 
     form, form fieldset {
-      width: 230px;
+      background-color: vars.$col-background-primary;
+      border-radius: vars.$radius-S;
 
       & label {
         display: block;
@@ -40,13 +38,29 @@
 
       & button {
         width: 100%;
-        background-color: vars.$col-primary;
+        background-color: vars.$col-secondary;
         border-radius: vars.$radius-S;
+        transition: 0.4s ease-in-out;
       }
 
       & button:hover {
-        background-color: vars.$col-secondary;
+        background-color: darken(vars.$col-secondary, 10%);
+        color: vars.$col-white;
+        
       }      
+    }
+
+    form {
+      padding-inline: vars.$space-S;
+      padding-block-end: vars.$space-S;
+      width: 290px;
+    }
+
+    form fieldset {
+      background-color: transparent;
+      // width of the form without padding-inline of form element * 2
+      width: calc(290px - (vars.$space-S * 2));
+      border-color: lighten(vars.$col-secondary, 10%);
     }
     
     

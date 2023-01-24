@@ -1,10 +1,15 @@
 @use './../../styles/utils/vars';
 
 .tableContainer {
+  background-color: vars.$col-background-primary;
+  border-start-start-radius: vars.$radius-S;
+  border-start-end-radius: vars.$radius-S;
+
   .table__searchSection {
     display: flex;
     justify-content: space-between;
     padding-block-end: vars.$space-S;
+    padding-inline: vars.$space-XS; // 1rem
 
     @media screen and (max-width: 620px) {
       flex-direction: column;
@@ -62,6 +67,10 @@
         margin-bottom: 2rem;
         display: block;
         border: 1px solid vars.$col-primary;
+      }
+
+      tbody tr:last-child {
+        margin-bottom: 0;
       }
     
       td {
