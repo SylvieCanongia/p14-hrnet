@@ -1,17 +1,22 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { nanoid } from "nanoid";
 import SelectDropdown from "../../components/SelectDropdown/SelectDropdown";
 import { states } from "../../data/statesList";
 import { departments } from "../../data/departmentsList";
 import "./createEmployee.scss";
 import CustomDatePicker from "../../components/DatePicker/CustomDatePicker";
+import Modal from "../../components/Modal/Modal";
 
 const CreateEmployee = () => {
+  const navigate = useNavigate();
+
+  const [openModal, setOpenModal] = useState(false);
   const [employees, setEmployees] = useState(
     JSON.parse(localStorage.getItem("employees")) || []
   );
 
+  // Create employee
   //  1. Create the initial state for new entries in the form fields
   const [formData, setFormData] = useState({
     firstName: "",
@@ -58,6 +63,11 @@ const CreateEmployee = () => {
     setEmployees(newEmployees);
 
     localStorage.setItem("employees", JSON.stringify(newEmployees));
+
+    setOpenModal(true);
+    setTimeout(() => {
+      navigate('/');
+    }, 3000);
   };
 
   return (
@@ -154,9 +164,10 @@ const CreateEmployee = () => {
         <button type="submit">Save employee</button>
       </form>
 
-      <div id="confirmation" className="modal">
-        Employee Created!
-      </div>
+      {/* <button onClick={() => setOpenModal(true)}>ouvrir</button> */}
+      { openModal &&
+        <Modal open={openModal} onClose={() => setOpenModal(false)} message="Employee created !"/>
+      }
     </div>
   );
 };

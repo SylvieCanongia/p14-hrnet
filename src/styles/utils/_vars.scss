@@ -57,8 +57,29 @@ $space-L: 40px;
 $space-XL: 48px;
 $space-row-47px: 47px;
 
-// ====== SIZES (HEIGHT, WIDTH) ======
+// ==== SIZES (HEIGHT, WIDTH) ====
+
+$modal-width: 400px;
+$modal-height: 150px;
 
 // ====== RADIUS ======
 
 $radius-S: 5px;
+
+// ====== ANIMATIONS ======
+
+$modal-duration: 0.8s;
+
+@keyframes slideInTop {
+  0% {
+    transform: translateY(-2%);
+    opacity: 0;
+  }
+  75% {
+    opacity: 50%;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -9,6 +9,11 @@
     padding-block-end: vars.$space-M;
     width: 90%;
     margin-inline: auto;
+    animation-duration: 600ms;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-name: slideInTop;
 
     @media screen and (max-width: 1350px) {
       width: 95%;

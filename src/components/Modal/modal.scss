@@ -1,0 +1,54 @@
+// Scss variables
+$col-white: hsl(0, 0%, 100%);
+$col-black: hsl(0, 0%, 0%);
+$modal-width: 400px;
+$modal-height: 150px;
+$radius-S: 5px;
+$space-XS: 16px;
+$modal-duration: 0.8s;
+$col-overlay: hsla(72,87%,23%, 0.6);
+
+.modal {
+  &.overlay {
+    // background-color: hsla(0, 0%, 0%, 0.5);
+    background-color: $col-overlay;
+    position: fixed;
+    inset: 0;
+  }
+
+  .modalBody {
+    width: 100%;
+    max-width: $modal-width;
+    height: $modal-height;
+    background-color: $col-white;
+    border: 1px solid $col-black;
+    position: relative;
+    top: calc(50% - $modal-height);
+    left: calc(50% - ($modal-width/2));
+
+    display: grid;
+    place-items: center;
+    border-radius: $radius-S;
+
+    animation-name: modalopen;
+    animation-duration: $modal-duration;
+  }
+
+  .modal__closeCross {
+    cursor: pointer;
+    position: absolute;
+    top: $space-XS;
+    right: $space-XS;
+  }
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
