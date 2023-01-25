@@ -1,7 +1,8 @@
 @use './../../styles/utils/vars';
 
 .header {
-  padding-block: vars.$space-M;
+  padding-block-start: vars.$space-S;
+  padding-block-end: vars.$space-XS;
   
   .header__container {
     display: flex;
@@ -9,8 +10,8 @@
 
     // Width and height of the image are defined for performance reasons
     .logo, .logo img {
-      width: 150px;
-      height: 138px;
+      width: 100px;
+      height: 92px;
     }
 
     .header__title {
@@ -28,8 +29,10 @@
     align-items: center;
 
     .logo, .logo img {
-      width: 150px;
-      height: 138px;
+      // width: 150px;
+      // height: 138px;
+      width: 100px;
+      height: 92px;
     }
 
     .header__title {

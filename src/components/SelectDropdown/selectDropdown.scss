@@ -11,4 +11,9 @@
   height: 30px;
   border: 1px inset vars.$col-secondary;
   border-radius: vars.$radius-S;
+
+  &:hover, &:focus {
+    box-shadow: 0 0 5pt 0.5pt vars.$col-box-shadow;
+    transition: 0.3s ease-in-out;
+  }
 }

@@ -37,6 +37,11 @@
         border-radius: vars.$radius-S;
       }
 
+      &>input:hover, &>input:focus, &>select:hover,  &>select:focus {
+        box-shadow: 0 0 5pt 0.5pt vars.$col-box-shadow;
+        transition: 0.3s ease-in-out;
+      }
+
       & #department {
         margin-block-end: vars.$space-S;
       }
@@ -45,13 +50,14 @@
         width: 100%;
         background-color: vars.$col-secondary;
         border-radius: vars.$radius-S;
-        transition: 0.4s ease-in-out;
+        color: vars.$col-white;
+        padding: 8px 20px;
+        transition: 0.3s ease-in-out;
       }
 
       & button:hover {
-        background-color: darken(vars.$col-secondary, 10%);
+        background-color: darken(vars.$col-secondary, 15%);
         color: vars.$col-white;
-        
       }      
     }
 

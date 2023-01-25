@@ -30,4 +30,18 @@
     @media screen and (max-width: 600px) {
       width: 95%;
     }
+
+    &__editButton {
+      background-color: vars.$col-secondary;
+      border-radius: vars.$radius-S;
+      width: 240px;
+      padding: 8px 20px;
+      color: vars.$col-white;
+      transition: 0.3s ease-in-out;
+    }
+
+    &__editButton:hover {
+      background-color: darken(vars.$col-secondary, 15%);
+      
+    }
 }

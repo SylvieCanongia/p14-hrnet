@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import './selectDropdown.scss';
-// You could use nanoid or uid for the key. If so, you will have to install/import them.
+// We could use nanoid or uid for the key. If so, you will have to install/import them.
 
 // import { nanoid } from "nanoid";
 //  Then set the key to : key={nanoid()};

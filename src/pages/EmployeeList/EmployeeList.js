@@ -12,7 +12,7 @@ const EmployeeList = () => {
      
       <Link to="/create-employee">
       <button
-      className="edit-button"
+      className="employeeList__editButton"
       type="button"
       >
       Create employee
