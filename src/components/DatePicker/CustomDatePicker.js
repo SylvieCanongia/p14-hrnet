@@ -8,8 +8,15 @@ import range from "lodash/range";
 import "react-datepicker/dist/react-datepicker.css";
 import './customDatePicker.scss';
 
-const CustomDatePicker = ({ id, name, startDate, setStartDate }) => {
-  // const [startDate, setStartDate] = useState();
+/**
+ * @module CustomDatePicker - A custom Date picker based on "react-datepicker"
+ * @param {String|object} startDate - The reference to the start date in the react state object
+ * - for example : startDate={formData.dateOfBirth}
+ * @param {Function} setStartDate - The callback that set the start date into the react state object
+ * - for example : setStartDate={(date) => setFormData({ ...formData, dateOfBirth: date })}
+ * @returns 
+ */
+const CustomDatePicker = ({ startDate, setStartDate }) => {
 
   const years = range(1950, getYear(new Date()) + 1, 1);
 
@@ -30,8 +37,6 @@ const CustomDatePicker = ({ id, name, startDate, setStartDate }) => {
 
   return (
     <DatePicker
-      id={id}
-      name={name}
       renderCustomHeader={({
         date,
         changeYear,
@@ -87,5 +92,14 @@ const CustomDatePicker = ({ id, name, startDate, setStartDate }) => {
     />
   );
 };
+
+CustomDatePicker.propTypes = {
+  // startDate is string before selection of the date in the date picker and then object Date
+  startDate: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
+  setStartDate: PropTypes.func.isRequired,
+}
 
 export default CustomDatePicker;

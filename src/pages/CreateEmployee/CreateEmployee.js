@@ -98,10 +98,10 @@ const CreateEmployee = () => {
         />
 
         <label htmlFor="dateOfBirth">Date of Birth</label>
-        <CustomDatePicker id="dateOfBirth" name="dateOfBirth" startDate={formData.dateOfBirth} setStartDate={(date) => setFormData({ ...formData, dateOfBirth: date })} />
+        <CustomDatePicker startDate={formData.dateOfBirth} setStartDate={(date) => setFormData({ ...formData, dateOfBirth: date })} />
 
         <label htmlFor="startDate">Start Date</label>
-        <CustomDatePicker id="startDate" name="startDate" startDate={formData.startDate} setStartDate={(date) => setFormData({ ...formData, startDate: date })} />
+        <CustomDatePicker startDate={formData.startDate} setStartDate={(date) => setFormData({ ...formData, startDate: date })} />
 
         <fieldset className="address">
           <legend>Address</legend>

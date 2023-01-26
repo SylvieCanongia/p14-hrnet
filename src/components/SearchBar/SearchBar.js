@@ -1,5 +1,5 @@
+import PropTypes from "prop-types";
 import './searchBar.scss';
-// import searchIcon from "./search.png";
 
 const SearchBar = ( {keywords, setKeywords } ) => {
 
@@ -12,7 +12,6 @@ const SearchBar = ( {keywords, setKeywords } ) => {
       <label htmlFor="searchBar">
         Search :
       </label>
-      {/* <img src={ searchIcon } alt="" /> */}
       <input
       type="text"
         id="searchBar"
@@ -24,5 +23,10 @@ const SearchBar = ( {keywords, setKeywords } ) => {
     </div>
   );
 };
+
+SearchBar.propTypes = {
+  keywords: PropTypes.string.isRequired,
+  setKeywords: PropTypes.func.isRequired,
+}
 
 export default SearchBar;

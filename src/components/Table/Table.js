@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from 'react';
 import { format } from 'date-fns';
 import ShowEntries from '../ShowEntries/ShowEntries';
@@ -7,7 +8,7 @@ import './table.scss';
 
 const Table = ( { employeesList }) => {
   const [keywords, setKeywords] = useState("");
-  const [nbOfEntries, setNbOfEntries] = useState(Number(10));
+  const [nbOfEntries, setNbOfEntries] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
   // ============================================================
@@ -47,9 +48,9 @@ const Table = ( { employeesList }) => {
   let startPointer;
   if(currentPage === 1) startPointer = 0;
   if (currentPage > 1) {
-    startPointer = (currentPage - 1) * Number(nbOfEntries);
+    startPointer = (currentPage - 1) * (nbOfEntries);
   }
-  const endPointer = startPointer + Number(nbOfEntries);
+  const endPointer = startPointer + (nbOfEntries);
 
   const filteredEmployeesToDisplay = filteredEmployeesList.slice(startPointer, endPointer);
 
@@ -117,5 +118,9 @@ const Table = ( { employeesList }) => {
     </div>
   );
 };
+
+Table.propTypes = {
+  employeesList: PropTypes.arrayOf(PropTypes.object)
+}
 
 export default Table;

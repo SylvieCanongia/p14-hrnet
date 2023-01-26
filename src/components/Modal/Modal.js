@@ -1,5 +1,13 @@
+import PropTypes from 'prop-types';
 import "./modal.scss";
 
+/**
+ * React Component - A Modal React component to display a simple message
+ * @module Modal
+ * @param {String} message - The message the modal should display
+ * @param {Function} onClose - A callback that closes the modal
+ * @returns { HTMLElement } - HTMLElement
+ */
 const Modal = ( {message, onClose } ) => {
 
   return (
@@ -15,5 +23,10 @@ const Modal = ( {message, onClose } ) => {
     </div>
   );
 };
+
+Modal.propTypes = {
+  message: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+}
 
 export default Modal;

@@ -13,13 +13,13 @@ import './selectDropdown.scss';
  * @param { String } object.id - The id of the select
  * @param { String } object.name - The name of the select
  * @param { String|Number } object.value - The value of the select
- * @param { (String|Null) } [object.required] - Otional "required" attribute with value of required="required" if present
- * @param { Callback } object.onChangeCallback - The onChangeCallback of the select
+ * @param { (String|Null) } [object.required] - Otional "required" attribute with value of required="required" if *present
+ * @param { Function } object.onChangeCallback - The onChangeCallback of the select
  * @param { Array } object.dataToMap - The dataToMap of the select
- * @param { String } object.optionLabel - The optionLabel of the select
+ * @param { String|Number } object.optionLabel - The optionLabel of the select
  * @param { String } object.optionValue - The optionValue of the select
  * @param { String } object.optionKey - The optionKey of the select
- * @returns { HTMLElement } -
+ * @returns { HTMLElement } - HTMLElement
  */
 const SelectDropdown = ({ label, id, name, value, required, onChangeCallback, dataToMap, optionLabel, optionValue, optionKey }) => {
 
@@ -44,11 +44,18 @@ SelectDropdown.propTypes = {
     label: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
+    // If data to map has a key "String" and a value "Number"
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
     required: PropTypes.string,
     onChangeCallback: PropTypes.func.isRequired,
     dataToMap: PropTypes.array.isRequired,
-    optionLabel: PropTypes.string.isRequired,
+    optionLabel: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
     optionValue: PropTypes.string.isRequired,
     optionKey: PropTypes.string.isRequired
   }

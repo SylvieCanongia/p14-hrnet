@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import SelectDropdown from "../SelectDropdown/SelectDropdown";
 import "./showEntries.scss";
 
@@ -25,7 +26,7 @@ const ShowEntries = ( { nbOfEntries, setNbOfEntries }) => {
   ]
 
   const handleChangeEntries = (e) => {
-    setNbOfEntries(e.target.value);
+    setNbOfEntries(Number(e.target.value));
   }
   
   return (
@@ -35,7 +36,7 @@ const ShowEntries = ( { nbOfEntries, setNbOfEntries }) => {
         label=""
         id=""
         name="entries"
-        value={nbOfEntries.toString()}
+        value={Number(nbOfEntries)}
         required=""
         onChangeCallback={handleChangeEntries}
         dataToMap={entries}
@@ -47,5 +48,10 @@ const ShowEntries = ( { nbOfEntries, setNbOfEntries }) => {
     </div>
   );
 };
+
+ShowEntries.propTypes = {
+  nbOfEntries: PropTypes.number.isRequired,
+  setNbOfEntries: PropTypes.func.isRequired
+}
 
 export default ShowEntries;

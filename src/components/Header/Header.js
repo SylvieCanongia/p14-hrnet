@@ -4,7 +4,7 @@ import LogoHeader from './logo.jpg';
 
 const Header = () => {
   const location = useLocation();
-  console.log(location.pathname);
+  // console.log(location.pathname);
 
   return (
     <nav className="header">
