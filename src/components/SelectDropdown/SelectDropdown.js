@@ -8,7 +8,7 @@ import './selectDropdown.scss';
 /**
  * Component - a select dropdown html element
  * @module SelectDropdown
- * @param { object[] } object
+ * @param { Object } object
  * @param { String } object.label - The label of the select
  * @param { String } object.id - The id of the select
  * @param { String } object.name - The name of the select

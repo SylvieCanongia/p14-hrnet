@@ -9,12 +9,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import './customDatePicker.scss';
 
 /**
+ * Returns a selected date
  * @module CustomDatePicker - A custom Date picker based on "react-datepicker"
  * @param {String|object} startDate - The reference to the start date in the react state object
  * - for example : startDate={formData.dateOfBirth}
  * @param {Function} setStartDate - The callback that set the start date into the react state object
  * - for example : setStartDate={(date) => setFormData({ ...formData, dateOfBirth: date })}
- * @returns 
+ * @returns {Date} Date
  */
 const CustomDatePicker = ({ startDate, setStartDate }) => {
 

@@ -2,6 +2,11 @@ import { NavLink, useLocation } from "react-router-dom";
 import "./header.scss";
 import LogoHeader from './logo.jpg';
 
+/**
+ * Displays the header
+ * @module Header
+ * @returns {HTMLelement} HTML Element
+ */
 const Header = () => {
   const location = useLocation();
   // console.log(location.pathname);

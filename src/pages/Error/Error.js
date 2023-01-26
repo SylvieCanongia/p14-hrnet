@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "./error.scss";
 
+/**
+ * The error Page
+ * @module Error
+ * @returns { HTMLElement } - HTMLElement
+ */
 const Error = () => {
   return (
     <div className='error'>

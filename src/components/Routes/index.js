@@ -4,6 +4,10 @@ import EmployeeList from "../../pages/EmployeeList/EmployeeList";
 import CreateEmployee from "../../pages/CreateEmployee/CreateEmployee";
 import Error from "../../pages/Error/Error";
 
+/**
+ * @module index
+ * @returns the routes of the application
+ */
 const index = () => {
   return (
     <React.StrictMode>

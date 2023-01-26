@@ -2,6 +2,12 @@ import PropTypes from "prop-types";
 import SelectDropdown from "../SelectDropdown/SelectDropdown";
 import "./showEntries.scss";
 
+/**
+ * A select that allows to choose a number of entries to display per page
+ * @module ShowEntries
+ * @param {Number} nbOfEntries - The name of the attribute that will get (in the root select element), the value of the selected option element
+ * @returns { HTMLElement } HTMLElement
+ */
 const ShowEntries = ( { nbOfEntries, setNbOfEntries }) => {
 
   const entries = [
@@ -25,6 +31,11 @@ const ShowEntries = ( { nbOfEntries, setNbOfEntries }) => {
     }
   ]
 
+  /**
+   * Updates the state of the property nbOfEntries
+   * @function handleChangeEntries
+   * @param {event} event - onChange event
+   */
   const handleChangeEntries = (e) => {
     setNbOfEntries(Number(e.target.value));
   }

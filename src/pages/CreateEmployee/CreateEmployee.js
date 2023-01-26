@@ -8,6 +8,11 @@ import "./createEmployee.scss";
 import CustomDatePicker from "../../components/DatePicker/CustomDatePicker";
 import Modal from "../../components/Modal/Modal";
 
+/**
+ * The page for creating new employees
+ * @module CreateEmployee
+ * @returns { HTMLElement } - HTMLElement
+ */
 const CreateEmployee = () => {
   const navigate = useNavigate();
 

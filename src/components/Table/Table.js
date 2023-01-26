@@ -6,6 +6,12 @@ import SearchBar from '../SearchBar/SearchBar';
 import Pagination from '../Pagination/Pagination';
 import './table.scss';
 
+/**
+ * The table that displays the list of employees
+ * @module Table
+ * @param {Array.<Object>}  employeesList - An array of object containing all the employees created
+ * @returns { HTMLElement } HTMLElement
+ */
 const Table = ( { employeesList }) => {
   const [keywords, setKeywords] = useState("");
   const [nbOfEntries, setNbOfEntries] = useState(10);

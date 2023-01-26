@@ -2,6 +2,11 @@ import { Link } from 'react-router-dom';
 import './employeeList.scss';
 import Table from '../../components/Table/Table';
 
+/**
+ * The page that displays the employees list
+ * @module EmployeeList
+ * @returns { HTMLElement } - HTMLElement
+ */
 const EmployeeList = () => {
   const employeesList = JSON.parse(localStorage.getItem('employees')) || [];
 
