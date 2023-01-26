@@ -77,7 +77,8 @@ const Form = ( { setOpenModal }) => {
   };
 
   return (
-    <form id="create-employee" onSubmit={handleAddFormSubmit}>
+    <div className="form">
+      <form id="create-employee" onSubmit={handleAddFormSubmit}>
         <label htmlFor="firstName">First Name</label>
         <input
           type="text"
@@ -164,6 +165,7 @@ const Form = ( { setOpenModal }) => {
 
         <button type="submit">Save employee</button>
       </form>
+    </div>
   );
 };
 

@@ -1,2 +1,65 @@
 @use "./../../styles/utils/vars";
 
+.form {
+  form {
+    padding-inline: vars.$space-S;
+    padding-block-start: vars.$space-base;
+    padding-block-end: vars.$space-S;
+    width: 290px;
+  }
+
+  form, form fieldset {
+    background-color: vars.$col-background-primary;
+    border-radius: vars.$radius-S;
+
+    & label {
+      display: block;
+      margin-block-start: vars.$space-XS;
+      margin-block-end: vars.$space-base;
+    }
+  
+    & .address {
+        margin-block-start: vars.$space-XS;
+        padding-block-start: 0;
+        padding-block-end: vars.$space-S;
+        border-radius: vars.$radius-S;
+    }
+
+    &>input, &>select {
+      width: 100%;
+      height: 30px;
+      border: 1px inset vars.$col-secondary;
+      border-radius: vars.$radius-S;
+    }
+
+    &>input:hover, &>input:focus, &>select:hover,  &>select:focus {
+      box-shadow: 0 0 5pt 0.5pt vars.$col-box-shadow;
+      transition: 0.3s ease-in-out;
+    }
+
+    & #department {
+      margin-block-end: vars.$space-S;
+    }
+
+    & button {
+      width: 100%;
+      background-color: vars.$col-secondary;
+      border-radius: vars.$radius-S;
+      color: vars.$col-white;
+      padding: 8px 20px;
+      transition: 0.3s ease-in-out;
+    }
+
+    & button:hover {
+      background-color: darken(vars.$col-secondary, 15%);
+      color: vars.$col-white;
+    }      
+  }
+
+  form fieldset {
+    background-color: transparent;
+    // width of the form without padding-inline of form element * 2
+    width: calc(290px - (vars.$space-S * 2));
+    border-color: lighten(vars.$col-secondary, 10%);
+  }
+}
