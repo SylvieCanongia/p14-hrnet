@@ -53,6 +53,8 @@
     font-weight: normal;
     text-align: left;
     border-inline: 1px solid vars.$col-border-light;
+    overflow: hidden;
+    word-break: break-word;
     }
   
     @media screen and (max-width: 1350px) {
