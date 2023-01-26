@@ -43,7 +43,7 @@
 
     & button {
       width: 100%;
-      background-color: vars.$col-secondary;
+      background-color: darken(vars.$col-secondary, 5%);
       border-radius: vars.$radius-S;
       color: vars.$col-white;
       padding: 8px 20px;

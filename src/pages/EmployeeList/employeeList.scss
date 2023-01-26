@@ -32,7 +32,7 @@
     }
 
     &__editButton {
-      background-color: vars.$col-secondary;
+      background-color: darken(vars.$col-secondary, 5%);
       border-radius: vars.$radius-S;
       width: 240px;
       padding: 8px 20px;

@@ -99,11 +99,15 @@ const Form = ( { setOpenModal }) => {
           onChange={handleAddFormChange}
         />
 
-        <label htmlFor="dateOfBirth">Date of Birth</label>
-        <CustomDatePicker startDate={formData.dateOfBirth} setStartDate={(date) => setFormData({ ...formData, dateOfBirth: date })} />
+        <label htmlFor="dateOfBirth">
+          Date of Birth
+          <CustomDatePicker startDate={formData.dateOfBirth} setStartDate={(date) => setFormData({ ...formData, dateOfBirth: date })} />
+        </label>
 
-        <label htmlFor="startDate">Start Date</label>
-        <CustomDatePicker startDate={formData.startDate} setStartDate={(date) => setFormData({ ...formData, startDate: date })} />
+        <label htmlFor="startDate">
+          Start Date
+          <CustomDatePicker startDate={formData.startDate} setStartDate={(date) => setFormData({ ...formData, startDate: date })} />
+        </label>
 
         <fieldset className="address">
           <legend>Address</legend>
