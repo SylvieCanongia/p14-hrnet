@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./createEmployee.scss";
-import Modal from "../../components/Modal/Modal";
+import { Modal } from "hrnet-modal-component";
 import Form from "../../components/Form/Form";
 
 /**
@@ -24,7 +24,7 @@ const CreateEmployee = () => {
       <Form setOpenModal={setOpenModal} />
 
       { openModal &&
-        <Modal open={openModal} onClose={() => setOpenModal(false)} message="Employee created !"/>
+        <Modal onClose={() => setOpenModal(false)} message="Employee created !"/>
       }
     </div>
   );

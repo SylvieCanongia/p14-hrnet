@@ -166,7 +166,7 @@ const Form = ( { setOpenModal }) => {
           optionValue="value"
           optionKey="name"
         />
-
+        
         <button type="submit">Save employee</button>
       </form>
     </div>
