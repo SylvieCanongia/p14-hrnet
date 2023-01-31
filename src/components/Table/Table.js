@@ -70,8 +70,8 @@ const Table = ( { employeesList }) => {
   let lastIndexToShow;
   if(currentPage === numberOfPages) lastIndexToShow = nbOfSearchResults;
 
-  let nbOfEntriesOnTheLastPage;
-  if(currentPage === numberOfPages) nbOfEntriesOnTheLastPage = nbOfSearchResults - ((numberOfPages - 1) * nbOfEntries);
+  // Pagination at the bottom left : 'Showing {nbOfFirstEntryOnThePage} to X of X entries'
+  let nbOfFirstEntryOnThePage = currentPage > 1  ? 1 + (nbOfEntries * (currentPage - 1)) : 1;
 
   return (
     <div className="tableContainer">
@@ -113,10 +113,10 @@ const Table = ( { employeesList }) => {
       <div className='table__paginationSection'>
       
         { currentPage < numberOfPages &&
-          <div>Showing {nbOfEntries} to {endPointer} of {nbOfSearchResults} entries</div>
+          <div>Showing {nbOfFirstEntryOnThePage} to {endPointer} of {nbOfSearchResults} entries</div>
         }
         { currentPage === numberOfPages &&
-          <div>Showing {nbOfEntriesOnTheLastPage} to {lastIndexToShow} of {nbOfSearchResults} entries</div>
+          <div>Showing {nbOfFirstEntryOnThePage} to {lastIndexToShow} of {nbOfSearchResults} entries</div>
         }
 
         <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} numberOfPages={numberOfPages} nbOfEntriesToShow={nbOfEntries} />
